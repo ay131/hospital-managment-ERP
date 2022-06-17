@@ -26,7 +26,8 @@
 
         # data
         'data/data.xml',
-    
+        #wizard
+        'wizard/create_appointment_view.xml',
         # views
         'views/doctor.xml',
         'views/appiontment.xml',

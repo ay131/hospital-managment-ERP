@@ -14,7 +14,7 @@
 
         <menuitem name="appointment" id="patient_appointment_menu" parent="hospital_menu" />
                   <menuitem name="appointments" id="patient_appointments_menu" parent="patient_appointment_menu" action="hospital_appointment_action" />
-                  <menuitem name="create appointment" id="create_appointment_menu" parent="patient_appointment_menu"  />
+                  <menuitem name="create appiontment" id="create_appointments_menu" parent="patient_appointment_menu" action="hospital_create_appointment_action" />
                   
         <menuitem name="hospital doctor"  id="hospital_doctor_menu" parent="hospital_menu"/>
                   <menuitem name="doctor" id="patient_doctor_menu" parent="hospital_doctor_menu" action="hospital_doctor_action" />
