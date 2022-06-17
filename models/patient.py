@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from datetime import date
+import math
 
 from odoo import models, fields, api,_
 
@@ -14,7 +15,7 @@ class HospitalPatient(models.Model):
 
    p_id=fields.Char(string='p_id',required=True,copy=False,readonly=True,default=lambda self:_('New'))
    name = fields.Char(string='name',required=True,tracking=True)
-   age = fields.Integer(string='age',tracking=True,compute='_compute_age' ) 
+   age = fields.Integer(string='age',compute='_compute_age',tracking=True) 
    gender=fields.Selection([('male','male'),('female','female')],string='gender',tracking=True)
    img=fields.Binary(string='patient image')
    brith_date=fields.Date(string='date of birth')
@@ -33,13 +34,12 @@ class HospitalPatient(models.Model):
    # _compute_age founction 
    @api.depends('brith_date')
    def _compute_age(self):
-      d_now=date.today()
       for i in self:
+         d_now=date.today()
          if i.brith_date :
-            # self.age = math.ceil((d_now.year - i.brith_date.year ) +( d_now.month - i.brith_date.month) / 12 )
             self.age =d_now.year - i.brith_date.year
          else:
-            self.age = 1
+            self.age = 0
 
    # _compute_appointment_count founction 
    def _compute_appointment_count(self):

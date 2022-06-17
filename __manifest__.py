@@ -28,6 +28,8 @@
         'data/data.xml',
     
         # views
+        'views/doctor.xml',
+        'views/appiontment.xml',
         'views/patient.xml',
         'views/menu.xml',
         

@@ -6,19 +6,6 @@ from attr import field
 from odoo import models, fields, api,_
 
 
-stat=[
-      ('draft','Draft'),
-      ('in_consultation','In_Consultation'),
-      ('done','Done'),
-      ('cancalled','Cancalled'),
-   ]
-per=[
-   ('0','normal'),
-   ('1','low'),
-   ('2','high'),
-   ('3','very high'),
-]
-
 
 # appointment model
 class HospitalAppointment(models.Model):
@@ -41,8 +28,18 @@ class HospitalAppointment(models.Model):
 
    pharmacy=fields.One2many('appointment.pharmacy','appointment_ids',string='pharmacy')
    predescription=fields.Html(string='predescription')
-   priority=fields.Selection(selection=per,string='priority')
-   state=fields.Selection(selection=stat,string='state',required=True,default='draft')
+   priority=fields.Selection([
+   ('0','normal'),
+   ('1','low'),
+   ('2','high'),
+   ('3','very high'),
+],string='priority')
+   state=fields.Selection([
+      ('draft','Draft'),
+      ('in_consultation','In_Consultation'),
+      ('done','Done'),
+      ('cancalled','Cancalled'),
+   ],string='state',required=True,default='draft')
    doctor_id=fields.Many2one('hospital.doctor',string='doctor')
    img=fields.Binary(related='patient_id.img')
    
@@ -68,7 +65,7 @@ class HospitalAppointment(models.Model):
 # onchange_patient_id
    @api.onchange('patient_id')
    def onchange_patient_id(self):
-      self.p_id=self.patient_id.p_id
+      self.description=self.patient_id.p_id
 
 # over ridde create action 
    @api.model
