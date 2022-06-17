@@ -23,7 +23,7 @@ class HospitalAppointment(models.Model):
 
    gender=fields.Selection(related='patient_id.gender')
    appointment_date=fields.Date(string='appointment time' , default=date.today())
-   booking_date=fields.Date(string='booking date')
+   booking_date=fields.Date(string='booking date',required=True)
    description=fields.Char(string='description')
 
    pharmacy=fields.One2many('appointment.pharmacy','appointment_ids',string='pharmacy')

@@ -20,6 +20,10 @@
                   <menuitem name="doctor" id="patient_doctor_menu" parent="hospital_doctor_menu" action="hospital_doctor_action" />
 
 
+        <menuitem name="reporting"  id="hospital_reporting_menu" parent="hospital_menu"/>
+                  <menuitem name="appointment report" id="appointment_repoert_menu" parent="hospital_reporting_menu" action="hospital_appointment_report_action" />
+
+
 
     </data>
 </odoo>

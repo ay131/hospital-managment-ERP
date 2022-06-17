@@ -5,3 +5,4 @@ access.hospital.appointment,hospital_appointment,model_hospital_appointment,base
 access.appointment.pharmacy,hospital_appointment_pharmacy,model_appointment_pharmacy,base.group_user,1,1,1,1
 access.hospital.doctor,hospital_doctor,model_hospital_doctor,base.group_user,1,1,1,1
 access.create.appointment.wizard,create_appointment_wizard,model_create_appointment_wizard,base.group_user,1,1,1,1
+access.appointment.report.wizard,appointment_report_wizard,model_appointment_report_wizard,base.group_user,1,1,1,1
