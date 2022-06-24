@@ -1,7 +1,19 @@
 <odoo>
   <data>
    
-
+<!--  "action" hospital_action_appointment_action-->
+  <record model="ir.actions.act_window" id="hospital_appointment_action">
+      <field name="name">Appointment</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">hospital.appointment</field>
+      <field name="view_mode">tree,form,kanban</field>
+      <field name="context">{'search_default_group_by_patient_id':1}</field>
+      <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            create your first appointment  !
+          </p>
+      </field>
+  </record>
 <!--  "tree view" // appointment_tree -->
   <record model="ir.ui.view" id="appointment_tree">
     <field name="name">appointment list</field>
@@ -199,25 +211,14 @@
                   <field name="appointment_date"/>
                   <field name="booking_date"/>
               <group expand="0" string="Group By">
-                    <filter string="patient_id" name="group_by_patient_id" context="{'group_by': 'patient_id'}" />
+                    <filter string="Patients" name="group_by_patient_id" context="{'group_by': 'patient_id'}" />
               </group>
             </search>
         </field>
     </record> 
 
 
-<!--  "action" hospital_action_appointment_action-->
-  <record model="ir.actions.act_window" id="hospital_appointment_action">
-      <field name="name">Appointment</field>
-      <field name="type">ir.actions.act_window</field>
-      <field name="res_model">hospital.appointment</field>
-      <field name="view_mode">tree,form,kanban</field>
-      <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
-            create your first appointment  !
-          </p>
-      </field>
-  </record>
+
 
 
 

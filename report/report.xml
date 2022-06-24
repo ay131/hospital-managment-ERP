@@ -36,6 +36,17 @@
             <field name="binding_type" >report</field>
         </record>  
 
+       <!--  "action" patient report_action-->
+        <record model="ir.actions.report" id="patient_reports_action">
+            <field name="name">patients report</field>
+            <field name="model">patient.report.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">om_hospital.patients_report_detail</field>
+            <field name="report_file">om_hospital.patients_report_detail</field>
+            <field name="binding_model_id" ref="model_patient_report_wizard"/>
+            <field name="binding_type" >report</field>
+        </record>
+
 
  
          

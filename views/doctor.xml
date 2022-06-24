@@ -7,8 +7,9 @@
         <field name="model">hospital.doctor</field>
         <field name="arch" type="xml">
         <tree sample="1">
-            <field name="doctor_id" string="id"/>
             <field name="name"/>
+            <field name="doctor_id" string="Doctor"/>
+
             <field name="gender"/>
             <field name="specialization"/>
         </tree>

@@ -17,10 +17,10 @@ class AppointmentReportWizard(models.TransientModel):
             domain+=[('patient_id','=',self.patient_id.id)]
             
         if self.date_from:
-            domain+=[('appointment_time','>=',self.date_from)]
+            domain+=[('appointment_date','>=',self.date_from)]
             
         if self.date_to:
-            domain+=[('appointment_time','<=',self.date_to)]
+            domain+=[('appointment_date','<=',self.date_to)]
             
         appointments=self.env['hospital.appointment'].search_read(domain)
         data={

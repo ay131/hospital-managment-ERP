@@ -20,13 +20,14 @@
     'depends': ['sale','base','mail','product'],
 
     # always loaded
-    'data': [
+    'data.xml': [
         # security
         'security/ir.model.access.csv',
 
-        # data
+        # data.xml
         'data/data.xml',
         #wizard
+        'wizard/patient_report_view.xml',
         'wizard/appointment_report_view.xml',
         'wizard/create_appointment_view.xml',
         # views
@@ -35,6 +36,7 @@
         'views/patient.xml',
         'views/menu.xml',
         # report
+        'report/patients_report_templet.xml',
         'report/appointment_report_templet.xml',
         'report/doctor_report_templet.xml',
         'report/patient_report_templet.xml',

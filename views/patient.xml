@@ -14,6 +14,7 @@
           <field name="name"/>
           <field name="age"/>
           <field name="gender"/>
+            <field name="company_id" readonly="1" />
           <field name="appointments"/>
         </tree>
       </field>
@@ -83,10 +84,11 @@
               <group expand="0" string="Group By">
                    <filter string="Gender" name="group_by_gender" context="{'group_by': 'gender'}"/>
               </group>
-            </search>
               <searchpanel>
-                   <field name="gender" string="Categories" enable_counters="1"  select="multi"  icon="fa-users"/> 
+                   <field name="gender" string="Categories" enable_counters="1"  select="multi"  icon="fa-users"/>
               </searchpanel>
+                        </search>
+
 
         </field>
     </record> 
